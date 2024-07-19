@@ -10,11 +10,11 @@ import requests
 class RecipeSearchView(generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         query = request.query_params.get('query')
-        response = request.get(f'https://api.spoonacular.com/recipes/complexSearch?query={query}&apiKey=YOUR_API_KEY')
+        response = requests.get(f'https://api.spoonacular.com/recipes/complexSearch?query={query}&apiKey=429ea709e7c645b284bfd9fe58ce6013 ')
         return Response(response.json()['results'])
 
 class FavoriteListView(generics.ListCreateAPIView):
-    queryset = Favorite.object.all()
+    queryset = Favorite.objects.all()
     serializer_class = FavoriteSerializer
     permission_classes = [permissions.IsAuthenticated]
 
