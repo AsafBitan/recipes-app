@@ -1,12 +1,12 @@
 [
-    {
-      "name": "Spaghetti Bolognese",
-      "description": "A classic Italian pasta dish with a rich meat sauce.",
-      "ingredients": ["spaghetti", "ground beef", "tomato sauce", "onion", "garlic"]
-    },
-    {
-      "name": "Tomato Soup",
-      "description": "A warm and comforting tomato soup.",
-      "ingredients": ["tomato", "onion", "garlic", "olive oil", "basil"]
-    }
-  ]
+  {
+    "name": "Tomato Basil Pasta",
+    "description": "A simple pasta dish with tomatoes, basil, and olive oil.",
+    "ingredients": ["tomato", "basil", "olive oil", "garlic", "pasta"]
+  },
+  {
+    "name": "Garlic Bread",
+    "description": "Crunchy bread with garlic and butter.",
+    "ingredients": ["bread", "garlic", "butter"]
+  }
+]
