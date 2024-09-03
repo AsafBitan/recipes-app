@@ -1,0 +1,12 @@
+[
+    {
+      "name": "Spaghetti Bolognese",
+      "description": "A classic Italian pasta dish with a rich meat sauce.",
+      "ingredients": ["spaghetti", "ground beef", "tomato sauce", "onion", "garlic"]
+    },
+    {
+      "name": "Tomato Soup",
+      "description": "A warm and comforting tomato soup.",
+      "ingredients": ["tomato", "onion", "garlic", "olive oil", "basil"]
+    }
+  ]
