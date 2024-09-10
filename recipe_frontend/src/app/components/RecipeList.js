@@ -7,9 +7,10 @@ const RecipeList = ({ recipes }) => {
 
     return (
         <div>
-            {recipes.map((recipe, index) => (
-                <div key={index}>
-                    <h3>{recipe.name}</h3>
+            {recipes.map((recipe) => (
+                <div key={recipe.id}>
+                    <h3>{recipe.title}</h3>
+                    <img src={recipe.image}></img>
                     <p>{recipe.description}</p>
                 </div>
             ))}
