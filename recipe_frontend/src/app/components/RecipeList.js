@@ -6,11 +6,11 @@ const RecipeList = ({ recipes }) => {
     }
 
     return (
-        <div>
+        <div className='grid-container'>
             {recipes.map((recipe) => (
-                <div key={recipe.id}>
+                <div key={recipe.id} className='recipe-card'>
                     <h3>{recipe.title}</h3>
-                    <img src={recipe.image}></img>
+                    <img src={recipe.image} alt={recipe.title}/>
                     <p>{recipe.description}</p>
                 </div>
             ))}
@@ -19,3 +19,9 @@ const RecipeList = ({ recipes }) => {
 };
 
 export default RecipeList;
+
+                <button key={recipe.id} className='recipe-card'>
+                    <h3>{recipe.title}</h3>
+                    <img src={recipe.image} alt={recipe.title}/>
+                    <p>{recipe.description}</p>
+                </button>
