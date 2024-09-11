@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Home() {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() =>{
     handleFirstRecipes();
@@ -13,11 +14,13 @@ export default function Home() {
 
   const handleFirstRecipes = async () => {
     try {
+      setLoading(true);
       const randomRecipes = await axios.get('/api/spoonacular');
       setRecipes(randomRecipes.data.recipes);
-      console.log(recipes);
     } catch (error) {
       console.error('Error fetching recipes:', error);
+    } finally {
+      setLoading(false); 
     }
   }
 
@@ -32,11 +35,19 @@ export default function Home() {
     }
   };
 
+  
+
   return (
     <div>
       <h1>Recipe Suggester</h1>
+     
       <IngredientInputForm onSearch={handleSearch} />
-      <RecipeList recipes={recipes} />
+       {loading? 
+        (<p>Loading...</p>
+        ): (
+        <RecipeList recipes={recipes} />
+      )}
+      {/* <RecipeList recipes={recipes} /> */}
     </div>
   );
 }

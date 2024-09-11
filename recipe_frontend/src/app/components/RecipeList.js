@@ -1,6 +1,15 @@
+"use client";
+
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 const RecipeList = ({ recipes }) => {
+    const router = useRouter();
+
+    const handleRecipeClick = async (recipeId) => {
+        router.push(`/recipes/${recipeId}`);
+    }    
+
     if (!recipes.length) {
         return <p>No recipes found.</p>;
     }
@@ -8,11 +17,15 @@ const RecipeList = ({ recipes }) => {
     return (
         <div className='grid-container'>
             {recipes.map((recipe) => (
-                <div key={recipe.id} className='recipe-card'>
+                <button
+                key={recipe.id}
+                className='recipe-card'
+                onClick={() => handleRecipeClick(recipe.id)}
+                >
                     <h3>{recipe.title}</h3>
                     <img src={recipe.image} alt={recipe.title}/>
                     <p>{recipe.description}</p>
-                </div>
+                </button>
             ))}
         </div>
     );
@@ -20,8 +33,5 @@ const RecipeList = ({ recipes }) => {
 
 export default RecipeList;
 
-                <button key={recipe.id} className='recipe-card'>
-                    <h3>{recipe.title}</h3>
-                    <img src={recipe.image} alt={recipe.title}/>
-                    <p>{recipe.description}</p>
-                </button>
+
+
